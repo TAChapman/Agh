@@ -22,6 +22,7 @@ public class Mines extends JFrame {
     private JMenu aboutMenu;         // About menu   has info
 
     private JMenuItem optionsItem;   // Options item
+    private JMenuItem pauseItem;     // Pause item
     private JMenuItem exitItem;      // Exit item
     private JMenuItem undoItem;      // Undo item
     private JMenuItem redoItem;      // Redo item
@@ -73,22 +74,26 @@ public class Mines extends JFrame {
 
     private void buildGameMenu()
     {
-        // Create an Options menu item.
+        //
         optionsItem = new JMenuItem("Options");
         optionsItem.setMnemonic(KeyEvent.VK_O);
         optionsItem.addActionListener(new ExitListener());
-        // Create an Exit menu item.
+        //
+        optionsItem = new JMenuItem("Pause");
+        optionsItem.setMnemonic(KeyEvent.VK_P);
+        optionsItem.addActionListener(new ExitListener());
+        //
         exitItem = new JMenuItem("Exit");
         exitItem.setMnemonic(KeyEvent.VK_X);
         exitItem.addActionListener(new ExitListener());
 
-        // Create a JMenu object for the Game menu.
+        //
         gameMenu = new JMenu("Game");
         gameMenu.setMnemonic(KeyEvent.VK_G);
 
         // Add the Exit menu item to the File menu.
-
         gameMenu.add(optionsItem);
+    //    gameMenu.add(pauseItem);
         gameMenu.add(exitItem);
     }
 
@@ -121,6 +126,7 @@ public class Mines extends JFrame {
     //
     aboutMenu = new JMenu("About");
     aboutMenu.setMnemonic(KeyEvent.VK_A);
+
     //
     aboutMenu.add(infoItem);
 
