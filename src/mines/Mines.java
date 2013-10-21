@@ -1,20 +1,20 @@
 package mines;
 
-import java.awt.BorderLayout;
-import java.awt.Event;
+import java.awt.*;
 import java.awt.event.*;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 public class Mines extends JFrame {
     //   Window Dimensions pixels
     private final int WIDTH = 960;         //was 250
     private final int HEIGHT = 660;        //was 290
     //   Status and Menu setup
-    private JLabel   statusbar;
+    private JLabel statusbar;
     private JMenuBar MinesMenu;      // The menu bar
 
     private JMenu gameMenu;          // Game menu    has Options and Exit
@@ -29,16 +29,14 @@ public class Mines extends JFrame {
     private JMenuItem infoItem;      // Info item
     public Mines() {
         setLayout(new BorderLayout());
-        setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);         // TODO: close game method
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         // TODO: close game method
         buildMenuBar();                  // Menu Added
         setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
-        setTitle("Find The Pirates");
+        setTitle("Pirates Cove");
 
         statusbar = new JLabel("");
-        add(statusbar, BorderLayout.NORTH);
-
-
+        add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
         setResizable(false);
@@ -147,5 +145,80 @@ public class Mines extends JFrame {
     }
 
 
+
+    private class CountDown
+    {
+        private long STEPS = 0;
+        private int seconds = 0;
+        private int minutes = 0;
+        private java.util.Timer timer;
+
+        public CountDown () {
+            setForeground(Color.cyan);
+            setVerticalAlignment(JLabel.LEFT);
+            setText("");
+        }
+        public void start() {
+            timer = new java.util.Timer();
+            TimerTask task = new TimerTask() {
+                public void run() {
+                    if (seconds > 60)
+                    {
+                        minutes++;
+                        seconds = 0;
+                    }
+                    else
+                    {
+                        seconds ++;
+                    }
+                    if (seconds > 10)
+                    {
+                        setText(String.valueOf(minutes) + ":" + String.valueOf(seconds));
+                    }
+                    else
+                    {
+                        setText(String.valueOf(minutes) + ":" + 0 + String.valueOf(seconds));
+                    }
+
+                }
+
+            } ;
+            timer.scheduleAtFixedRate(task, 0, STEPS);
+        }
+        public void stop()
+        {
+            timer.cancel();
+        }
+        public void reset()
+        {
+            timer.cancel();
+            seconds = 0;
+            setText("");
+        }
+        public int getSeconds()
+        {
+            return seconds;
+        }
+        public void main (String args[])
+        {
+            JFrame a = new JFrame();
+            JPanel b = new JPanel();
+            CountDown counter = new CountDown();
+            a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            b.add(counter);
+            a.add(b);
+            a.pack();
+            a.setVisible(true);
+            counter.start();
+
+        }
+    }
+
+
+
+
+
+
 }
+
 

@@ -33,7 +33,7 @@ public class Board extends JPanel {
     private boolean inGame;
     private int mines_left;
     private Image[] img;
-    private int mines = 3;          //  easy medium hard settings from options        was 40
+    private int mines = 5;          //  easy medium hard settings from options        was 40
     private int rows = 10;                // was 16
     private int cols = 16;
     private int all_cells;
@@ -256,10 +256,10 @@ public class Board extends JPanel {
 
         if (uncover == 0 && inGame) {       //   Markup available    end game
             inGame = false;
-            statusbar.setText("Game won");
+            statusbar.setText("Well Done.  You have defeated the pirates.");
             g.drawImage(img[14], 0, 0, this);
         } else if (!inGame) {
-            statusbar.setText("Game lost");         //   Mark up from here
+            statusbar.setText("Off to Davey Jones Locker for you!");         //   Mark up from here
             g.drawImage(img[13], 0, 0, this);
         }
     }
