@@ -1,6 +1,7 @@
 package mines;
 
 import java.awt.*;
+import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Timer;
@@ -8,16 +9,17 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
-import java.awt.Color;
 import javax.swing.JTextField;
+
 
 public class Mines extends JFrame {
     //   Window Dimensions pixels
-    private final int WIDTH = 960;         //was 250
+    private final int WIDTH = 1260;         //was 250
     private final int HEIGHT = 660;        //was 290
     //   Status and Menu setup
     private JLabel statusbar;
     private JMenuBar MinesMenu;      // The menu bar
+    private JLabel Statistics;
 
     private JMenu gameMenu;          // Game menu    has Options and Exit
     private JMenu moveMenu;          // Move menu    has Undo and Redo
@@ -25,6 +27,7 @@ public class Mines extends JFrame {
 
     private JMenuItem optionsItem;   // Options item
     private JMenuItem pauseItem;     // Pause item
+    private JMenuItem solveItem;     // Pause item
     private JMenuItem exitItem;      // Exit item
     private JMenuItem undoItem;      // Undo item
     private JMenuItem redoItem;      // Redo item
@@ -37,10 +40,13 @@ public class Mines extends JFrame {
         setLocationRelativeTo(null);
         setTitle("Pirates Cove");
 
+
         statusbar = new JLabel("");
         add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
+        Statistics = new JLabel("Keep Me");               //  Markup   adds the stats
+        add(Statistics,BorderLayout.WEST) ;
         setResizable(false);
         setVisible(true);
 
@@ -79,9 +85,13 @@ public class Mines extends JFrame {
         optionsItem.setMnemonic(KeyEvent.VK_O);
         optionsItem.addActionListener(new ExitListener());
         //
-        optionsItem = new JMenuItem("Pause");
-        optionsItem.setMnemonic(KeyEvent.VK_P);
-        optionsItem.addActionListener(new ExitListener());
+        pauseItem = new JMenuItem("Pause");
+        pauseItem.setMnemonic(KeyEvent.VK_P);
+        pauseItem.addActionListener(new ExitListener());
+        //
+        solveItem = new JMenuItem("Solve");
+        solveItem.setMnemonic(KeyEvent.VK_S);
+        solveItem.addActionListener(new ExitListener());
         //
         exitItem = new JMenuItem("Exit");
         exitItem.setMnemonic(KeyEvent.VK_X);
@@ -145,11 +155,6 @@ public class Mines extends JFrame {
             System.exit(0);
         }
     }
-
-
-
-
-
 
 
 

@@ -69,14 +69,7 @@ public class Timer extends JLabel
 
      /*   public static void main(String args[]) {
             JFrame f =new JFrame();
-            JPanel j = new JPanel();
-            Timer timer=new Timer();
-            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            j.add(timer);
-            f.add(j);
-            f.pack();
-            f.setVisible(true);
-            timer.start();
+
         } */
     }
 
