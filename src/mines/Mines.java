@@ -19,8 +19,8 @@ public class Mines extends JFrame {
     //   Status and Menu setup
     private JLabel statusbar;
     private JMenuBar MinesMenu;      // The menu bar
-    private JLabel Statistics;
-
+    private JLabel Statistics;         // Statistics Panel
+    private JLabel HOF;                //Hall of Fame Panel
     private JMenu gameMenu;          // Game menu    has Options and Exit
     private JMenu moveMenu;          // Move menu    has Undo and Redo
     private JMenu aboutMenu;         // About menu   has info
@@ -31,7 +31,12 @@ public class Mines extends JFrame {
     private JMenuItem exitItem;      // Exit item
     private JMenuItem undoItem;      // Undo item
     private JMenuItem redoItem;      // Redo item
-    private JMenuItem infoItem;      // Info item
+    private JMenuItem infoItem;
+
+         // Info item
+    private JTextField statsText;
+
+
     public Mines() {
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         // TODO: close game method
@@ -45,12 +50,16 @@ public class Mines extends JFrame {
         add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
-        Statistics = new JLabel("Keep Me");               //  Markup   adds the stats
+        Statistics = new JLabel("This is the best game ever");               //  Markup   adds the stats
         add(Statistics,BorderLayout.WEST) ;
         setResizable(false);
         setVisible(true);
 
-
+       HOF = new JLabel("Keep Me");               //  Markup   adds the stats
+       add(HOF,BorderLayout.EAST) ;
+       HOF.setBackground(Color.cyan);
+       setResizable(false);
+       setVisible(true);
 
     }
     
@@ -68,6 +77,8 @@ public class Mines extends JFrame {
         buildGameMenu();
         buildMoveMenu();
         buildAboutMenu();
+
+        // Stats panels
 
         //
         MinesMenu.add(gameMenu);
@@ -143,7 +154,11 @@ public class Mines extends JFrame {
     }
 
 
-    private class ExitListener implements ActionListener
+
+
+
+    }
+   class ExitListener implements ActionListener
     {
         /**
          actionPerformed method
@@ -160,6 +175,6 @@ public class Mines extends JFrame {
 
 
 
-}
+
 
 

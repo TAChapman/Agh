@@ -33,7 +33,7 @@ public class Timer extends JLabel
             TimerTask task=new TimerTask() {
                 public void run() {
                     if(minutes > 60){
-                        setText("Seriously?");
+                        setText("GIVE UP ALREADY");
                     } else {
                         if(seconds > 60){
                             minutes++;
@@ -47,7 +47,7 @@ public class Timer extends JLabel
                             setText(String.valueOf(minutes) + ":" + "0" + String.valueOf(seconds));
                         }
 
-                        //setText(""+nbSeconds);
+
                     }
 
                 }
