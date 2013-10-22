@@ -8,6 +8,8 @@ import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
+import java.awt.Color;
+import javax.swing.JTextField;
 
 public class Mines extends JFrame {
     //   Window Dimensions pixels
@@ -146,73 +148,7 @@ public class Mines extends JFrame {
 
 
 
-    private class CountDown
-    {
-        private long STEPS = 0;
-        private int seconds = 0;
-        private int minutes = 0;
-        private java.util.Timer timer;
 
-        public CountDown () {
-            setForeground(Color.cyan);
-            setVerticalAlignment(JLabel.LEFT);
-            setText("");
-        }
-        public void start() {
-            timer = new java.util.Timer();
-            TimerTask task = new TimerTask() {
-                public void run() {
-                    if (seconds > 60)
-                    {
-                        minutes++;
-                        seconds = 0;
-                    }
-                    else
-                    {
-                        seconds ++;
-                    }
-                    if (seconds > 10)
-                    {
-                        setText(String.valueOf(minutes) + ":" + String.valueOf(seconds));
-                    }
-                    else
-                    {
-                        setText(String.valueOf(minutes) + ":" + 0 + String.valueOf(seconds));
-                    }
-
-                }
-
-            } ;
-            timer.scheduleAtFixedRate(task, 0, STEPS);
-        }
-        public void stop()
-        {
-            timer.cancel();
-        }
-        public void reset()
-        {
-            timer.cancel();
-            seconds = 0;
-            setText("");
-        }
-        public int getSeconds()
-        {
-            return seconds;
-        }
-        public void main (String args[])
-        {
-            JFrame a = new JFrame();
-            JPanel b = new JPanel();
-            CountDown counter = new CountDown();
-            a.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            b.add(counter);
-            a.add(b);
-            a.pack();
-            a.setVisible(true);
-            counter.start();
-
-        }
-    }
 
 
 
