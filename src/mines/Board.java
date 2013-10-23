@@ -19,9 +19,23 @@ public class Board extends JPanel {
     private final int COVER_FOR_CELL = 10;
     private final int MARK_FOR_CELL = 10;
     private final int EMPTY_CELL = 0;
-    private final int MINE_CELL = 9;
+    private final int MINE_CELL = 9;            // hit rocks
+    private final int EPIRATE = 10;
+    private final int MPIRATE = 11;
+    private final int HPIRATE = 12;
     private final int COVERED_MINE_CELL = MINE_CELL + COVER_FOR_CELL;
+    private final int ECOVERED_MINE_CELL = EPIRATE + COVER_FOR_CELL;
+    private final int MCOVERED_MINE_CELL = MPIRATE + COVER_FOR_CELL;
+    private final int HCOVERED_MINE_CELL = HPIRATE + COVER_FOR_CELL;
     private final int MARKED_MINE_CELL = COVERED_MINE_CELL + MARK_FOR_CELL;
+    private final int EMARKED_MINE_CELL = ECOVERED_MINE_CELL + MARK_FOR_CELL;
+    private final int MMARKED_MINE_CELL = MCOVERED_MINE_CELL + MARK_FOR_CELL;
+    private final int HMARKED_MINE_CELL = HCOVERED_MINE_CELL + MARK_FOR_CELL;
+
+
+
+
+
 
     private final int DRAW_MINE = 9;
     private final int DRAW_COVER = 10;

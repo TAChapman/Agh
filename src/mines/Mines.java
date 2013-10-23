@@ -146,7 +146,7 @@ public class Mines extends JFrame {
 
     infoItem = new JMenuItem("Info");
     infoItem.setMnemonic(KeyEvent.VK_I);
-    infoItem.addActionListener(new ExitListener());
+    infoItem.addActionListener(new About());
     //
     aboutMenu = new JMenu("About");
     aboutMenu.setMnemonic(KeyEvent.VK_A);

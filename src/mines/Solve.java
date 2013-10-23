@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 public class Solve implements ActionListener {
     private JFrame Wimp = new JFrame("Whimp - To the stocks with ye  !!!")   ;
     public Solve() {
-        Wimp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Wimp.setSize(350, 450);
+        Wimp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    // kick the wimp out with no saves...
+        Wimp.setSize(300, 168);
         Wimp.setLocationRelativeTo(null);
         Wimp.setVisible(false);
 
@@ -18,3 +18,5 @@ public class Solve implements ActionListener {
         Wimp.setVisible(true);
     }
 }
+
+
