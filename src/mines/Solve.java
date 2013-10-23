@@ -1,5 +1,5 @@
 package mines;
-
+         //  added image
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 public class Solve implements ActionListener {
     private JFrame Wimp = new JFrame("Whimp - To the stocks with ye  !!!")   ;
     private JPanel WPa = new JPanel();
-    private JLabel imgLabel = new JLabel(new ImageIcon("Archive/j18.png"));
+    private JLabel imgLabel = new JLabel(new ImageIcon("Archive/j18.png"));     /// toDO: check this
 
 
     public Solve() {
