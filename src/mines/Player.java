@@ -5,12 +5,14 @@ import java.io.*;
 import java.util.*  ;
 import javax.swing.JPanel;
 
-public class Player extends JPanel{
+public class Player extends Mines{
     private String playerName;
     private int gameLevel,lifePoints;
 
     private ArrayList <String> saveGame = new ArrayList <String>() ;
     private String [] gameStats = new String[10] ;
+
+
     public Player(String pName, int gLevel)       {
         playerName = pName;
         gameLevel=gLevel;

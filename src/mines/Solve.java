@@ -4,14 +4,13 @@ package mines;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.Graphics;
 import javax.swing.ImageIcon;
 
 
 public class Solve implements ActionListener {
     private JFrame Wimp = new JFrame("Whimp - To the stocks with ye  !!!")   ;
     private JPanel WPa = new JPanel();
-    private JLabel imgLabel = new JLabel(new ImageIcon("Archive/j17.png"));
+    private JLabel imgLabel = new JLabel(new ImageIcon("Archive/j18.png"));
 
 
     public Solve() {

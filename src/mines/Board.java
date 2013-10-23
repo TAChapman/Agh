@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class Board extends JPanel {
 
-    private final int NUM_IMAGES = 17;           //  Mark up was 13   added   j14 & j15  which is game end cover
+    private final int NUM_IMAGES = 19;           //  Mark up was 13   added   j14 -19  which is game end cover
     private final int CELL_SIZE = 60;            //   Mark up  was  15
 
     private final int COVER_FOR_CELL = 10;
@@ -38,28 +38,23 @@ public class Board extends JPanel {
 
 
     private final int DRAW_MINE = 9;
-    private final int DRAW_MINE_1 = 15;
-    private final int DRAW_MINE_2 = 16;
-    private final int DRAW_COVER = 10;
-    private final int DRAW_MARK = 11;
-    private final int DRAW_WRONG_MARK = 12;
-
-    private final int DRAW_END_GAME = 22;
+    private final int DRAW_COVER = 13;
+    private final int DRAW_MARK = 14;
+    private final int DRAW_WRONG_MARK = 15;
 
     private int[] field;
     private boolean inGame;
     private int mines_left;
-    private int mines1_left;
-    private int mines2_left;
     private Image[] img;
-    private int mines = 5;          //  easy medium hard settings from options        was 40
-   // private int mines1 = 5;
-   // private int mines2 = 5;
+    private int mines = 5;          //  easy medium hard settings from options        was 40    These are now rocks
+    private int ePirate = 10;
+    private int mPirate = 10;
+    private int hPirate = 15;
+
     private int rows = 10;                // was 16
     private int cols = 16;
     private int all_cells;
     private JLabel statusbar;
-
 
 
     public Board(JLabel statusbar) {
@@ -83,82 +78,27 @@ public class Board extends JPanel {
 
     public void newGame() {    //    Sets up a new game
 
-        Random random;
-        int current_col;
 
-        int i = 0;
-        int position = 0;
-        int cell = 0;
-
-        random = new Random();
         inGame = true;
-        mines_left = mines;
-
+        mines_left = mines+ePirate+mPirate+hPirate;
 
         all_cells = rows * cols;
         field = new int[all_cells];
 
-        for (i = 0; i < all_cells; i++)
+        for (int i = 0; i < all_cells; i++)
             field[i] = COVER_FOR_CELL;
 
         statusbar.setText(Integer.toString(mines_left));
 
+        //  draw the board --   pass to the undo array
+        drawBoard(mines) ;     // now rocks
+        drawBoard(ePirate) ;
+        drawBoard(mPirate) ;
+        drawBoard(hPirate) ;
 
-        i = 0;
-        while (i < mines) {
-
-            position = (int) (all_cells * random.nextDouble());
-
-            if ((position < all_cells) &&
-                    (field[position] != COVERED_MINE_CELL)) {
-
-
-                current_col = position % cols;
-                field[position] = COVERED_MINE_CELL;
-                i++;
-
-                if (current_col > 0) {
-                    cell = position - 1 - cols;
-                    if (cell >= 0)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-                    cell = position - 1;
-                    if (cell >= 0)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-
-                    cell = position + cols - 1;
-                    if (cell < all_cells)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-                }
-
-                cell = position - cols;
-                if (cell >= 0)
-                    if (field[cell] != COVERED_MINE_CELL)
-                        field[cell] += 1;
-                cell = position + cols;
-                if (cell < all_cells)
-                    if (field[cell] != COVERED_MINE_CELL)
-                        field[cell] += 1;
-
-                if (current_col < (cols - 1)) {
-                    cell = position - cols + 1;
-                    if (cell >= 0)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-                    cell = position + cols + 1;
-                    if (cell < all_cells)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-                    cell = position + 1;
-                    if (cell < all_cells)
-                        if (field[cell] != COVERED_MINE_CELL)
-                            field[cell] += 1;
-                }
-            }
-        }
     }
+
+
 
 
     public void find_empty_cells(int j) {      // this just uncovers all empty cells in the adjacent grids
@@ -279,11 +219,11 @@ public class Board extends JPanel {
 
         if (uncover == 0 && inGame) {       //   Markup available    end game
             inGame = false;
-            statusbar.setText(" You have defeated the pirates.  You are a God!!!!!!!");
+            statusbar.setText("Well Done.  You have defeated the pirates.");
             g.drawImage(img[14], 0, 0, this);
         } else if (!inGame) {
             statusbar.setText("Off to Davey Jones Locker for you!");         //   Mark up from here
-           //g.drawImage(img[13], 0, 0, this);
+         //  g.drawImage(img[13], 0, 0, this);
         }
     }
 
@@ -352,6 +292,71 @@ public class Board extends JPanel {
                     repaint();
 
             }
+        }
+    }
+    void drawBoard(int Badies)  {
+        Random random;
+        int current_col;
+
+        int i = 0;
+        int position = 0;
+        int cell = 0;
+
+        random = new Random();
+
+        while (i < Badies) {
+
+            position = (int) (all_cells * random.nextDouble());
+
+            if ((position < all_cells) &&
+                    (field[position] != COVERED_MINE_CELL)) {
+
+
+                current_col = position % cols;
+                field[position] = COVERED_MINE_CELL;
+                i++;
+
+                if (current_col > 0) {
+                    cell = position - 1 - cols;
+                    if (cell >= 0)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+                    cell = position - 1;
+                    if (cell >= 0)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+
+                    cell = position + cols - 1;
+                    if (cell < all_cells)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+                }
+
+                cell = position - cols;
+                if (cell >= 0)
+                    if (field[cell] != COVERED_MINE_CELL)
+                        field[cell] += 1;
+                cell = position + cols;
+                if (cell < all_cells)
+                    if (field[cell] != COVERED_MINE_CELL)
+                        field[cell] += 1;
+
+                if (current_col < (cols - 1)) {
+                    cell = position - cols + 1;
+                    if (cell >= 0)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+                    cell = position + cols + 1;
+                    if (cell < all_cells)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+                    cell = position + 1;
+                    if (cell < all_cells)
+                        if (field[cell] != COVERED_MINE_CELL)
+                            field[cell] += 1;
+                }
+            }
+
         }
     }
     public void solve()
