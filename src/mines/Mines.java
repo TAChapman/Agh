@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-
 public class Mines extends JFrame {
     //   Window Dimensions pixels
     private final int WIDTH = 1260;         //was 250
@@ -33,8 +32,10 @@ public class Mines extends JFrame {
     private JMenuItem redoItem;      // Redo item
     private JMenuItem infoItem;
 
+
          // Info item
     private JTextField statsText;
+
 
 
     public Mines() {
@@ -45,13 +46,16 @@ public class Mines extends JFrame {
         setLocationRelativeTo(null);
         setTitle("Pirates Cove");
 
+        mines.Timer Gametimer = new mines.Timer();
+        add(Gametimer,BorderLayout.WEST)   ;
 
         statusbar = new JLabel("");
         add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
         Statistics = new JLabel("This is the best game ever");               //  Markup   adds the stats
-        add(Statistics,BorderLayout.WEST) ;
+
+        // add(Statistics,BorderLayout.WEST) ;
         setResizable(false);
         setVisible(true);
 
@@ -63,10 +67,9 @@ public class Mines extends JFrame {
 
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) {           //  Game wrapper
         new Mines();
     }
-
 
     private void buildMenuBar()
     {
@@ -84,7 +87,7 @@ public class Mines extends JFrame {
         MinesMenu.add(gameMenu);
         MinesMenu.add(moveMenu);
         MinesMenu.add(aboutMenu);
-        MinesMenu.add(solveItem);
+
         //
         setJMenuBar(MinesMenu);
     }
@@ -102,7 +105,7 @@ public class Mines extends JFrame {
         //
         solveItem = new JMenuItem("Solve");
         solveItem.setMnemonic(KeyEvent.VK_S);
-        solveItem.addActionListener(new ExitListener());
+        solveItem.addActionListener(new Solve());
         //
         exitItem = new JMenuItem("Exit");
         exitItem.setMnemonic(KeyEvent.VK_X);
@@ -114,10 +117,10 @@ public class Mines extends JFrame {
 
         // Add the Exit menu item to the File menu.
         gameMenu.add(optionsItem);
-      gameMenu.add(pauseItem);
+        gameMenu.add(pauseItem);
+        gameMenu.add(solveItem);
         gameMenu.add(exitItem);
     }
-
 
     private void buildMoveMenu()
     {
@@ -153,26 +156,12 @@ public class Mines extends JFrame {
 
     }
 
-
-
-
-
-    }
-   class ExitListener implements ActionListener
-    {
-        /**
-         actionPerformed method
-         @param e An ActionEvent object.
-         */
-
-        public void actionPerformed(ActionEvent e)
-        {
-            System.exit(0);
-        }
-    }
-
-
-
+}
+class ExitListener implements ActionListener
+{
+    public void actionPerformed(ActionEvent e)
+    { System.exit(0); }
+}
 
 
 
