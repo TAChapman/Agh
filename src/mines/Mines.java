@@ -84,7 +84,7 @@ public class Mines extends JFrame {
         MinesMenu.add(gameMenu);
         MinesMenu.add(moveMenu);
         MinesMenu.add(aboutMenu);
-
+        MinesMenu.add(solveItem);
         //
         setJMenuBar(MinesMenu);
     }

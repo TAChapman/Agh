@@ -260,7 +260,7 @@ public class Board extends JPanel {
             g.drawImage(img[14], 0, 0, this);
         } else if (!inGame) {
             statusbar.setText("Off to Davey Jones Locker for you!");         //   Mark up from here
-            g.drawImage(img[13], 0, 0, this);
+         //  g.drawImage(img[13], 0, 0, this);
         }
     }
 
