@@ -114,7 +114,7 @@ public class Mines extends JFrame {
 
         // Add the Exit menu item to the File menu.
         gameMenu.add(optionsItem);
-    //    gameMenu.add(pauseItem);
+      gameMenu.add(pauseItem);
         gameMenu.add(exitItem);
     }
 
