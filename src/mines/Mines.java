@@ -41,9 +41,7 @@ public class Mines extends JFrame {
 
 
     public Mines() {
-        setLayout(new BorderLayout.());
-        //add(ControlP, BorderLayout.CENTER);
-       // ControlP.add(CardLayout);
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         // TODO: close game method
         buildMenuBar();                  // Menu Added
         setSize(WIDTH, HEIGHT);
@@ -71,7 +69,9 @@ public class Mines extends JFrame {
        setVisible(true);
 
     }
-    
+
+
+
     public static void main(String[] args) {           //  Game wrapper
         new Mines();
     }

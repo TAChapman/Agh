@@ -25,16 +25,14 @@ public class Timer extends JLabel
         public Timer() {
             setForeground(Color.blue);
             setHorizontalAlignment(JLabel.CENTER);
-            setText(""+0);
+            setText(""+10);
         }
 
         public void start() {
             timer=new java.util.Timer();
-            TimerTask task=new TimerTask() {
+            TimerTask task= new TimerTask() {
                 public void run() {
                     if(minutes > 60){
-                        setText("GIVE UP ALREADY");
-                    } else {
                         if(seconds > 60){
                             minutes++;
                             seconds = 0;
@@ -55,15 +53,10 @@ public class Timer extends JLabel
             timer.scheduleAtFixedRate(task,0,STEPS);
         }
 
-        public void stop() {
-            timer.cancel();
-        }
 
-        public void reset() {
-            timer.cancel();
-            seconds=-1;
-            setText(""+0);
-        }
+
+
+
 
         public int getSeconds() {return seconds;}
 
