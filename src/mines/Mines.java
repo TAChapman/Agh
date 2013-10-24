@@ -13,13 +13,13 @@ import javax.swing.JTextField;
 
 public class Mines extends JFrame {
     //   Window Dimensions pixels
-    private final int WIDTH = 1260;
+    private final int WIDTH = 1000;                     //1260
     private final int HEIGHT = 660;
     //   Status and Menu setup
     private JLabel statusbar;
     private JMenuBar MinesMenu;      // The menu bar
-    private JLabel Statistics;         // Statistics Panel
-    private JLabel HOF;                //Hall of Fame Panel
+    private JPanel Statistics;         // Statistics Panel
+    private JPanel HOF;                //Hall of Fame Panel
 
     private JMenu gameMenu;          // Game menu    has Options Solve and Exit
     private JMenu moveMenu;          // Move menu    has Undo and Redo
@@ -41,7 +41,9 @@ public class Mines extends JFrame {
 
 
     public Mines() {
-        setLayout(new BorderLayout());
+        setLayout(new BorderLayout.());
+        //add(ControlP, BorderLayout.CENTER);
+       // ControlP.add(CardLayout);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);         // TODO: close game method
         buildMenuBar();                  // Menu Added
         setSize(WIDTH, HEIGHT);
@@ -55,15 +57,16 @@ public class Mines extends JFrame {
         add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
-        Statistics = new JLabel("This is the best game ever");               //  Markup   adds the stats
+        Statistics = new JPanel();               //  Markup   adds the stats
 
-        // add(Statistics,BorderLayout.WEST) ;
+        add(Statistics,BorderLayout.WEST) ;
+        Statistics.setBackground(Color.BLUE);
         setResizable(false);
         setVisible(true);
 
-       HOF = new JLabel("Keep Me");               //  Markup   adds the stats
+       HOF = new JPanel();               //  Markup   adds the stats
        add(HOF,BorderLayout.EAST) ;
-       HOF.setBackground(Color.cyan);
+       HOF.setBackground(Color.BLUE);
        setResizable(false);
        setVisible(true);
 
