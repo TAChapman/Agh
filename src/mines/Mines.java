@@ -12,8 +12,9 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 public class Mines extends JFrame {
+
     //   Window Dimensions pixels
-    private final int WIDTH = 1000;                     //1260
+    private final int WIDTH = 1260;                     //1260
     private final int HEIGHT = 660;
     //   Status and Menu setup
     private JLabel statusbar;
@@ -48,15 +49,15 @@ public class Mines extends JFrame {
         setLocationRelativeTo(null);
         setTitle("Pirates Cove");
 
-        mines.Timer Gametimer = new mines.Timer();
-        add(Gametimer,BorderLayout.WEST)   ;
+
 
         statusbar = new JLabel("");
         add(statusbar, BorderLayout.CENTER);
         add(new Board(statusbar));
 
         Statistics = new JPanel();               //  Markup   adds the stats
-
+        mines.Timer Gametimer = new mines.Timer();
+        add(Gametimer,BorderLayout.WEST)   ;
         add(Statistics,BorderLayout.WEST) ;
         Statistics.setBackground(Color.BLUE);
         setResizable(false);

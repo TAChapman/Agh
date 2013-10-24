@@ -16,7 +16,7 @@ public class Solve implements ActionListener {
 
     public Solve() {
        Wimp.add(WPa)  ;
-      Wimp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    // kick the wimp out with no saves...
+        Wimp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);    // kick the wimp out with no saves...
         Wimp.setSize(300, 168);
 
         Wimp.add(imgLabel);

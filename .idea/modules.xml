@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Agh.iml" filepath="$PROJECT_DIR$/Agh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../src/Desktop.iml" filepath="$PROJECT_DIR$/../src/Desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/assorted/assorted.iml" filepath="$PROJECT_DIR$/assorted/assorted.iml" />
+    </modules>
+  </component>
+</project>
+
