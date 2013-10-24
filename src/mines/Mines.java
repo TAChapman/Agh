@@ -13,14 +13,15 @@ import javax.swing.JTextField;
 
 public class Mines extends JFrame {
     //   Window Dimensions pixels
-    private final int WIDTH = 1260;         //was 250
-    private final int HEIGHT = 660;        //was 290
+    private final int WIDTH = 1260;
+    private final int HEIGHT = 660;
     //   Status and Menu setup
     private JLabel statusbar;
     private JMenuBar MinesMenu;      // The menu bar
     private JLabel Statistics;         // Statistics Panel
     private JLabel HOF;                //Hall of Fame Panel
-    private JMenu gameMenu;          // Game menu    has Options and Exit
+
+    private JMenu gameMenu;          // Game menu    has Options Solve and Exit
     private JMenu moveMenu;          // Move menu    has Undo and Redo
     private JMenu aboutMenu;         // About menu   has info
 
@@ -30,12 +31,13 @@ public class Mines extends JFrame {
     private JMenuItem exitItem;      // Exit item
     private JMenuItem undoItem;      // Undo item
     private JMenuItem redoItem;      // Redo item
-    private JMenuItem infoItem;
+    private JMenuItem infoItem;      // Info item
 
 
-         // Info item
-    private JTextField statsText;
+    private JTextField statsText;    // To hold player stats
 
+    // set up a master container to display Game, Options etc... as Card layout
+    private JPanel ControlP = new JPanel();
 
 
     public Mines() {

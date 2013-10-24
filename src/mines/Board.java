@@ -309,7 +309,7 @@ public class Board extends JPanel {
             position = (int) (all_cells * random.nextDouble());
 
             if ((position < all_cells) &&
-                    (field[position] != COVERED_MINE_CELL)) {
+                    (field[position] < COVERED_MINE_CELL)) {
 
 
                 current_col = position % cols;

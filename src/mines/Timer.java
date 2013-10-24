@@ -23,7 +23,7 @@ public class Timer extends JLabel
         private java.util.Timer timer;
 
         public Timer() {
-            setForeground(Color.red);
+            setForeground(Color.blue);
             setHorizontalAlignment(JLabel.CENTER);
             setText(""+0);
         }
