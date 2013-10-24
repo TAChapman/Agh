@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 public class Board extends JPanel {
 
-    private final int NUM_IMAGES = 15;           //  Mark up was 13   added   j14 & j15  which is game end cover
+    private final int NUM_IMAGES = 17;           //  Mark up was 13   added   j14 & j15  which is game end cover
     private final int CELL_SIZE = 60;            //   Mark up  was  15
 
     private final int COVER_FOR_CELL = 10;
@@ -38,20 +38,28 @@ public class Board extends JPanel {
 
 
     private final int DRAW_MINE = 9;
+    private final int DRAW_MINE_1 = 15;
+    private final int DRAW_MINE_2 = 16;
     private final int DRAW_COVER = 10;
     private final int DRAW_MARK = 11;
     private final int DRAW_WRONG_MARK = 12;
+
     private final int DRAW_END_GAME = 22;
 
     private int[] field;
     private boolean inGame;
     private int mines_left;
+    private int mines1_left;
+    private int mines2_left;
     private Image[] img;
     private int mines = 5;          //  easy medium hard settings from options        was 40
+   // private int mines1 = 5;
+   // private int mines2 = 5;
     private int rows = 10;                // was 16
     private int cols = 16;
     private int all_cells;
     private JLabel statusbar;
+
 
 
     public Board(JLabel statusbar) {
@@ -85,6 +93,7 @@ public class Board extends JPanel {
         random = new Random();
         inGame = true;
         mines_left = mines;
+
 
         all_cells = rows * cols;
         field = new int[all_cells];
@@ -270,11 +279,11 @@ public class Board extends JPanel {
 
         if (uncover == 0 && inGame) {       //   Markup available    end game
             inGame = false;
-            statusbar.setText("Well Done.  You have defeated the pirates.");
+            statusbar.setText(" You have defeated the pirates.  You are a God!!!!!!!");
             g.drawImage(img[14], 0, 0, this);
         } else if (!inGame) {
             statusbar.setText("Off to Davey Jones Locker for you!");         //   Mark up from here
-         //  g.drawImage(img[13], 0, 0, this);
+           //g.drawImage(img[13], 0, 0, this);
         }
     }
 
@@ -344,6 +353,12 @@ public class Board extends JPanel {
 
             }
         }
+    }
+    public void solve()
+    {
+       inGame = false;
+       statusbar.setVisible(false);
+
     }
 }
 
