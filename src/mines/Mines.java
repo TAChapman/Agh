@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.Color;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.Timer;
-import java.util.TimerTask;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
@@ -33,7 +31,10 @@ public class Mines extends JFrame {
     private JMenuItem undoItem;      // Undo item
     private JMenuItem redoItem;      // Redo item
     private JMenuItem infoItem;      // Info item
-
+    private JCheckBoxMenuItem easyLevel;
+    private JCheckBoxMenuItem mediumLevel;
+    private JCheckBoxMenuItem hardLevel;
+     private JCheckBoxMenuItem gameLevelMenu;
 
     private JTextField statsText;    // To hold player stats
 
@@ -56,9 +57,10 @@ public class Mines extends JFrame {
         add(new Board(statusbar));
 
         Statistics = new JPanel();               //  Markup   adds the stats
-        mines.Timer Gametimer = new mines.Timer();
+        GTimer Gametimer = new GTimer();
         add(Gametimer,BorderLayout.WEST)   ;
         add(Statistics,BorderLayout.WEST) ;
+        Statistics.setSize(200, 600);
         Statistics.setBackground(Color.BLUE);
         setResizable(false);
         setVisible(true);
@@ -127,7 +129,28 @@ public class Mines extends JFrame {
         gameMenu.add(solveItem);
         gameMenu.add(exitItem);
     }
+      private void buildGameLevelMenu()
+      {
+          easyLevel = new JCheckBoxMenuItem("Easy", true);
+          easyLevel.setMnemonic(KeyEvent.VK_E);
+          easyLevel.setSelected(false);
+          easyLevel.addActionListener(new ExitListener());
 
+          mediumLevel = new JCheckBoxMenuItem("Medium", true);
+          mediumLevel.setMnemonic(KeyEvent.VK_M);
+          mediumLevel.setSelected(false);
+          mediumLevel.addActionListener(new ExitListener());
+
+          hardLevel = new JCheckBoxMenuItem("Hard", true);
+          hardLevel.setMnemonic(KeyEvent.VK_E);
+          hardLevel.setSelected(false);
+          hardLevel.addActionListener(new ExitListener());
+
+          gameLevelMenu.add(easyLevel);
+          gameLevelMenu.add(mediumLevel);
+          gameLevelMenu.add(hardLevel);
+
+      }
     private void buildMoveMenu()
     {
         //

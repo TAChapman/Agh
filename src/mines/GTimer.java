@@ -15,16 +15,17 @@ import java.awt.Color;
 import java.util.TimerTask;
 
 
-public class Timer extends JLabel
+public class GTimer extends JLabel
 {
         private final static long STEPS = 1000;
         private int seconds=-1;
         private int minutes=0;
         private java.util.Timer timer;
 
-        public Timer() {
+        public GTimer() {
             setForeground(Color.blue);
             setHorizontalAlignment(JLabel.CENTER);
+            setSize(200, 200);
             setText(""+10);
         }
 
@@ -53,17 +54,22 @@ public class Timer extends JLabel
             timer.scheduleAtFixedRate(task,0,STEPS);
         }
 
+          public void stop() {
+              timer.cancel();
+          }
+          public void reset(){
+              timer.cancel();
+              seconds -= 1;
+              setText("" + 0);
+          }
 
 
 
+        public int getSeconds() {
+            return seconds;
+        }
 
 
-        public int getSeconds() {return seconds;}
-
-     /*   public static void main(String args[]) {
-            JFrame f =new JFrame();
-
-        } */
     }
 
 

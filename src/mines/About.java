@@ -1,27 +1,29 @@
 package mines;
 
+import com.sun.tools.javac.comp.Flow;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 
-public class About implements ActionListener {
-    private JFrame About = new JFrame("The Pirates Cove") ;
-    private JPanel A1 = new JPanel()  ;
-    private JLabel Dev1, Dev2, Dev3;
-    public About(){
-   /*   About.add(A1)  ;
-        A1.add(Dev1)  ;
-        A1.add(Dev2)  ;
-        A1.add(Dev3)  ;
-      Dev1.setText("Developed by:");
-       Dev2.setText("Patricia Chapman");
-       Dev1.setText("Neil Rieck");*/
+public class About implements ActionListener {           //Displays the about window when About/Info menu item   selected
+    private JFrame About = new JFrame("About The Pirates Cove") ;
+    private JPanel APA= new JPanel();
+    private JLabel imgLabel = new JLabel(new ImageIcon("Archive/about.png"));
 
-        About.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        About.setSize(350, 450);
+    public About() {
+        About.add(APA)  ;
+         APA.setLayout(new GridLayout(1, 1));
+        About.setSize(350, 310);
+
+        About.add(imgLabel);
         About.setLocationRelativeTo(null);
+      //  About.setVisible(false);
 
-        About.setVisible(false);
+
+
 
 
     }
