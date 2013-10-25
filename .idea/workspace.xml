@@ -1,50 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d473677c-7318-466d-a969-ee3656f834db" name="Default" comment="- Moved to github&#10;stack included">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mines/Options.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/640px-JollyRoger copy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/640px-JollyRoger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/__MACOSX/j13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j.11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j10.png.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j10000.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j11.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j110000.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j11000000.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j12.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j13.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j14.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j140.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j15.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j16.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j17.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/j90000.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/rocks.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/j13.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/mines/Timer.java" afterPath="$PROJECT_DIR$/src/mines/GTimer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mines/About.java" afterPath="$PROJECT_DIR$/src/mines/About.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mines/Mines.java" afterPath="$PROJECT_DIR$/src/mines/Mines.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mines/Solve.java" afterPath="$PROJECT_DIR$/src/mines/Solve.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="d473677c-7318-466d-a969-ee3656f834db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Agh.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Board.java" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382584783659" ignored="false" />
-    <file path="/Dummy.txt" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382659906766" ignored="false" />
+    <file path="/Dummy.txt" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382731124419" ignored="false" />
     <file path="/Mines.java" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382661499017" ignored="false" />
     <file path="/Timer.java" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382645517555" ignored="false" />
     <file path="/Solve.java" changelist="d473677c-7318-466d-a969-ee3656f834db" time="1382591897579" ignored="false" />
@@ -662,12 +625,16 @@
       <created>1382646235776</created>
       <updated>1382646235776</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Moved to github&#10;stack included&#10;No event listeners yet but it should work as it does in JPL">
+      <created>1382731132573</created>
+      <updated>1382731132573</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.060763888" sideWeight="0.49958017" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -733,7 +700,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Moved to github&#10;stack included" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Moved to github&#10;stack included&#10;No event listeners yet but it should work as it does in JPL" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -751,6 +718,7 @@
     <MESSAGE value="- Moved to github&#10;menu and window panes updated new images" />
     <MESSAGE value="- Moved to github&#10;fixed the solve image" />
     <MESSAGE value="- Moved to github&#10;stack included" />
+    <MESSAGE value="- Moved to github&#10;stack included&#10;No event listeners yet but it should work as it does in JPL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
